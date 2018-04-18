@@ -235,3 +235,4 @@
      (setMotors 0 0)))
   (close-asip)
   )
+  (main)
