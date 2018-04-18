@@ -14,10 +14,11 @@ Another function, the Finder can be used to locate a certain color in an image, 
 
 ## Program Flow
 
-1. `open-asip` (provided by AsipMain.rkt in Open-asip): is called to open connection with the arduino layer of the MIRTO Bot
-2. `click_and_process`: uses a system call to raspistill to take an image and save it. The saved image is then loaded into the program using bitmap/file (provided by 2htdp/image), the image is then processed into a list of pixels with their color values [eg (color 255 255 255 255)]
+1. `open-asip` (provided by AsipMain.rkt in Open-asip): is called to open connection with the arduino layer of the MIRTO Bot.
+2. `click_and_process`: uses a system call to raspistill to take an image and save it. The saved image is then loaded into the program using bitmap/file (provided by 2htdp/image), the image is then processed into a list of pixels with their color values [eg (color 255 255 255 255)].
 3. `Finder`: Uses get_pixel, which queries color values from the processed list generated in the click_and_process function. When the queried pixel is equal to a certain color it is saved into a variable and used as a base point. This function is also responsible for searching for the obstacle (if one exists). For now, it only works with 0 or 1 obstacle. This limitation exists because of the way, the program searches for the target or the obstacle.
-If the target is not found the function rotates the bot by an angle equal to the field of view of the camera in a clockwise direction, and then goes back to "2." `click_and_process` to start the process again until it either finds the target or the robot has done a full 360 degree rotation
+If the target is not found the function rotates the bot by an angle equal to the field of view of the camera in a clockwise direction, and then goes back to "2." `click_and_process` to start the process again until it either finds the target or the robot has done a full 360 degree rotation.
 4. `obstacle_blocking?`: This function is only called if an obstacle is present. It checks if the obstacle is blocking the patch to the target, if it is then it raises a flag.
 5.  `rotate_to_face`: is called to roate the MIRTO Bot to face the target regardless if the path is blocked or not
-6. Depending on if a flag was raised by `obstacle_blocking?` one of two things happen either the `evade` function is called or the bot moves in a straight line to the target
+6. Depending on if a flag was raised by `obstacle_blocking?` one of two things happen either the `evade` function is called or the bot moves in a straight line to the target.
+7. Once the program has run it's course it calls 'close-asip' to close the connection with the arduino layer and exits.
