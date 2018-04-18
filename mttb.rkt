@@ -14,8 +14,8 @@
 (define sensor_height 3.68) ;in mm
 (define vertical_resolution 640)
 (define distance_covered_per_second 423) ;in mm
-(define target_height 500) ;in mm
-(define obstacle_height 500) ;in mm
+(define target_height 50) ;in mm
+(define obstacle_height 50) ;in mm
 
 ;Image Capture and processing=========================================================================
 (define image_counter 0)
