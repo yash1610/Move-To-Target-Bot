@@ -22,3 +22,10 @@ If the target is not found the function rotates the bot by an angle equal to the
 5.  `rotate_to_face`: is called to roate the MIRTO Bot to face the target regardless if the path is blocked or not
 6. Depending on if a flag was raised by `obstacle_blocking?` one of two things happen either the `evade` function is called or the bot moves in a straight line to the target.
 7. Once the program has run it's course it calls `close-asip` to close the connection with the arduino layer and exits.
+
+## SIGSEGV MAPERR si_code 1 fault on addr 0x1
+
+Since this is built on racket and MIRTO is based on Raspberry Pi v3 which is an ARMv8 device. Sometimes the program exits with an error `SIGSEGV MAPERR si_code 1 fault on addr 0x1`. If this happens to you please run the program under strace. The reason for this errors lies with racket (only supports ARMv6 devices, and ARMv8 is not backwards compatible).
+So one might think why it works in strace then? The answer lies with ptrace, the underlying framework of strace. What ptrace does is, it handles all the memory allocation on behalf of the program as such the program which is built on racket (ARMv6 only) doesn't need to do any memory management and thus doesn't map to wrong memory addresses.
+
+P.S this is my understanding of this error, if I am wrong please feel free to correct me and explain why it happens.
