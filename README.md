@@ -8,9 +8,11 @@ While the computer vision parts could have been done in a language better suited
 
 The program is split into multiple functions for easier upgrades and extensions, and while the functions do basic tasks. Their applications could be numerous in defferent areas or as standalone programs
 
-For example the Distance to Target/Obstacle function could be extractred and used with a database of lens specifications for latest phones and a coin to find out the distance from the camera to the coin (the coin being a placeholder for the postion you want the distance for) without relying on a depth sensor or a second camera to do so.
+For example the `Distance to Target/Obstacle` function could be extractred and used with a database of lens specifications for latest phones and a coin to find out the distance from the camera to the coin (the coin being a placeholder for the postion you want the distance for) without relying on a depth sensor or a second camera to do so.
 
-Another function, the Finder can be used to locate a certain color in an image, while this is all it does in the current iteration of the program, combined with another function that finds the in-image height of the object (distance_helper) this function can further be extended to detect shapes comprised of a single color. I have a working prototype of this sape deteciton function although I chose not to use it as the project end-date drew near. Although I do hope to add it in the coming months.
+The `Finder` can be used to locate a certain color in an image, while this is all it does in the current iteration of the program, combined with another function that finds the in-image height of the object (distance_helper) this function can further be extended to detect shapes comprised of a single color. I have a working prototype of this sape deteciton function although I chose not to use it as the project end-date drew near. Although I do hope to add it in the coming months.
+
+Another function, `Evade`. Can be repurposed to navigate around multiple obstacles rather than just 1 obstacle in our case by a simple loop
 
 ## Program Flow
 
