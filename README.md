@@ -6,6 +6,8 @@ It requires `Open-Asip` (https://github.com/mdxmase/asip) and `2HTDP/images` for
 
 While the computer vision parts could have been done in a language better suited to it I chose to use racket regardless. My professor did suggest using the openCV library to do the detection part, while that would have been a miles better solution than my hacky one, I decided to go ahead with my hacky-one to learn more about the basics of computer vision.
 
+## Alternate Applications
+
 The program is split into multiple functions for easier upgrades and extensions, and while the functions do basic tasks. Their applications could be numerous in defferent areas or as standalone programs
 
 For example the `Distance to Target/Obstacle` function could be extractred and used with a database of lens specifications for latest phones and a coin to find out the distance from the camera to the coin (the coin being a placeholder for the postion you want the distance for) without relying on a depth sensor or a second camera to do so.
