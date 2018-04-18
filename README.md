@@ -21,4 +21,4 @@ If the target is not found the function rotates the bot by an angle equal to the
 4. `obstacle_blocking?`: This function is only called if an obstacle is present. It checks if the obstacle is blocking the patch to the target, if it is then it raises a flag.
 5.  `rotate_to_face`: is called to roate the MIRTO Bot to face the target regardless if the path is blocked or not
 6. Depending on if a flag was raised by `obstacle_blocking?` one of two things happen either the `evade` function is called or the bot moves in a straight line to the target.
-7. Once the program has run it's course it calls 'close-asip' to close the connection with the arduino layer and exits.
+7. Once the program has run it's course it calls `close-asip` to close the connection with the arduino layer and exits.
