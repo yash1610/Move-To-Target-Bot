@@ -1,5 +1,7 @@
 # Move To Target Bot
 
+Demonstration Video: https://youtu.be/G_b-UGhbvUw
+
 Built on top of the MIRTO Platform, with an added Raspberry Pi v2 Camera for target/obstacle detection.
 
 It requires `Open-Asip` (https://github.com/mdxmase/asip) and `2HTDP/images` for functioning.
